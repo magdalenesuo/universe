@@ -1,0 +1,7 @@
+flask-rest-jsonapi
+flask
+virtualenv
+flask_sqlalchemy
+psycopg2
+sqlalchemy
+marshmallow_jsonapi
