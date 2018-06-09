@@ -336,19 +336,19 @@ def fix_family():
     for k in howmany:
         total[k] = total[k]/howmany[k]
         for f in family:
-            if f.name_identifier == k and initial[f.name_identifier] is not total[k]:
+            if f.name_identifier == k and abs(initial[f.name_identifier]) is not abs(total[k]):
+              print initial[f.name_identifier],total[k]
               f.fam_power = total[f.name_identifier]
               if f.name_identifier not in unbalanced:
                 unbalanced.append(f.name_identifier)
 
-            elif f.name_identifier == k and initial[f.name_identifier] == total[k]:
+            elif f.name_identifier == k and abs(initial[f.name_identifier]) is abs(total[k]):
               f.fam_power = total[f.name_identifier]
               if f.name_identifier not in balanced:
                 balanced.append(f.name_identifier)
         
     db.session.add(f)
     db.session.commit()
-    print unbalanced
 
     result=jsonify(balanced_families=balanced,
                    unbalanced_families=unbalanced)
