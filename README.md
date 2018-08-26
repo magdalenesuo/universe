@@ -9,8 +9,8 @@
 ### Create:
 Name | Endpoint
 ------------ | -------------
-universe :milky_way: | **/univesre/<universe_id>/families**
-family :family: | **/univesre/<universe_id>/families**
+universe :milky_way: | **/universe/<universe_id>/families**
+family :family: | **/universe/<universe_id>/families**
 person :bust_in_silhouette: | **/family/<family_id>/people**
 
 ### Patch/Delete:
